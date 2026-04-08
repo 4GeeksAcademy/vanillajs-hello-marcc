@@ -12,13 +12,12 @@ window.onload = function () {
 
   let html = "";
 
-  for (let i = 0; i < 8; i++) {
-
-    let p = pronoun[Math.floor(Math.random() * pronoun.length)];
-    let a = adj[Math.floor(Math.random() * adj.length)];
-    let n = noun[Math.floor(Math.random() * noun.length)];
-
-    html += p + a + n + ".com <br>";
+  for (let p of pronoun) {
+    for (let a of adj) {
+      for (let n of noun) {
+        html += p + a + n + ".com <br>";
+      }
+    }
   }
 
   document.getElementById("domains").innerHTML = html;
